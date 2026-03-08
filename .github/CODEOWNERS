@@ -1,0 +1,37 @@
+# CODEOWNERS
+# Each line defines a file pattern and the owner(s) responsible for reviewing changes.
+# Owners are automatically requested for review when a pull request modifies matching files.
+# More specific rules override broader ones.
+# Documentation: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# ---------------------------------------------------------
+# Global owner — reviews all changes by default
+# ---------------------------------------------------------
+*   @cmonrel
+
+# ---------------------------------------------------------
+# Source code
+# ---------------------------------------------------------
+/src/   @cmonrel
+# /src/   @cmonrel @new-collaborator
+
+# ---------------------------------------------------------
+# Configuration files
+# ---------------------------------------------------------
+*.config.*      @cmonrel
+*.json          @cmonrel
+# *.config.*    @cmonrel @new-collaborator
+
+# ---------------------------------------------------------
+# Documentation
+# ---------------------------------------------------------
+/docs/          @cmonrel
+*.md            @cmonrel
+# /docs/        @cmonrel @new-collaborator
+
+# ---------------------------------------------------------
+# CI/CD and GitHub settings
+# ---------------------------------------------------------
+/.github/       @cmonrel
+# /.github/     @cmonrel @new-collaborator
+  
