@@ -1,0 +1,222 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   2. Global variables
+   ========================= */
+
+:root {
+  /* Backgrounds */
+  --bg-0: #07090d;
+  --bg-1: #0b0d10;
+  --bg-2: #12151c;
+
+  /* Text */
+  --text-main: #e6e8ee;
+  --text-muted: #a1a6b3;
+
+  /* Borders */
+  --border-soft: #1f2430;
+
+  /* Accents */
+  --accent: #8b5cf6; /* default */
+  --accent-soft: rgba(139, 92, 246, 0.25);
+  --accent-strong: rgba(139, 92, 246, 0.6);
+
+  /* States */
+  --danger: #b10f2e;
+  --success: #22c55e;
+
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* Transitions */
+  --ease-main: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* VIOLET */
+:root[data-theme="violet"] {
+  --bg-0: #070312;
+  --bg-1: #0f0620;
+  --bg-2: #160b2d;
+
+  --text-main: #e8e3ff;
+  --text-muted: #a89bd6;
+
+  --accent: #7c3aed;
+  --accent-soft: rgba(109, 40, 217, 0.25);
+  --accent-strong: rgba(139, 92, 246, 0.6);
+
+  --border-soft: #2a1f44;
+}
+
+/* BLOOD */
+:root[data-theme="blood"] {
+  --bg-0: #0b0b0d;
+  --bg-1: #141016;
+  --bg-2: #1a1419;
+
+  --text-main: #f2e9ec;
+  --text-muted: #c7b9be;
+
+  --accent: #b10f2e;
+  --accent-soft: rgba(177, 15, 46, 0.25);
+  --accent-strong: rgba(177, 15, 46, 0.6);
+
+  --border-soft: #2a1b21;
+}
+
+/* ALCHEMY */
+:root[data-theme="alchemy"] {
+  --bg-0: #07100c;
+  --bg-1: #0d1814;
+  --bg-2: #12231d;
+
+  --text-main: #e6f5ee;
+  --text-muted: #b8d4c7;
+
+  --accent: #22c55e;
+  --accent-soft: rgba(34, 197, 94, 0.22);
+  --accent-strong: rgba(34, 197, 94, 0.55);
+
+  --border-soft: #1f3a2f;
+}
+
+/* PARCHMENT */
+:root[data-theme="parchment"] {
+  --bg-0: #f6f0e2;
+  --bg-1: #fffaf0;
+  --bg-2: #efe4cf;
+
+  --text-main: #1b1a17; 
+  --text-muted: #4b463f;
+
+  --accent: #8a6a2f;
+  --accent-soft: rgba(138, 106, 47, 0.18);
+  --accent-strong: rgba(138, 106, 47, 0.45);
+
+  --border-soft: #d8cbb4;
+}
+
+/* CATHEDRAL */
+:root[data-theme="cathedral"] {
+  --bg-0: #eef0f6;
+  --bg-1: #f8f9fd;
+  --bg-2: #e2e6f0;
+
+  --text-main: #13151b;
+  --text-muted: #424857;
+
+  --accent: #5b4ad6;
+  --accent-soft: rgba(91, 74, 214, 0.14);
+  --accent-strong: rgba(91, 74, 214, 0.38);
+
+  --border-soft: #cdd3e3;
+}
+
+/* HERBAL */
+:root[data-theme="herbal"] {
+  --bg-0: #eef5ef;
+  --bg-1: #fbfff9;
+  --bg-2: #e2eee2;
+
+  --text-main: #121a14;
+  --text-muted: #3f4f45;
+
+  --accent: #2f7d4f;
+  --accent-soft: rgba(47, 125, 79, 0.16);
+  --accent-strong: rgba(47, 125, 79, 0.40);
+
+  --border-soft: #c7d7c8;
+}
+
+/* =========================
+   3. Base document
+   ========================= */
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: clamp(14px, 1.2vw, 16px);
+  background:
+    radial-gradient(circle at top, var(--accent-soft), transparent 60%),
+    linear-gradient(var(--bg-1), var(--bg-0));
+
+  color: var(--text-main);
+  line-height: 1.5;
+
+  overflow: hidden; /* el scroll vive en el contenido */
+}
+
+/* =========================
+   4. Base text
+   ========================= */
+
+h1, h2, h3, h4 {
+  font-family: "Merriweather", serif;
+  letter-spacing: 0.4px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* =========================
+   5. Global interactions
+   ========================= */
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* =========================
+   6. Scrollbar
+   ========================= */
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: if(
+    style(--bg-0: #f6f0e2): var(--accent-strong);
+    style(--bg-0: #eef0f6): var(--accent-strong);
+    style(--bg-0: #eef5ef): var(--accent-strong);
+    else: var(--accent-soft);
+  );
+  border-radius: 999px;
+}

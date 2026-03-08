@@ -1,0 +1,74 @@
+/* =========================
+   Main Layout
+   ========================= */
+
+.app-layout {
+  display: flex;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  background:
+    radial-gradient(circle at top right, var(--accent-soft), transparent 80%),
+    linear-gradient(var(--bg-1), var(--bg-0));
+
+  color: var(--text-main);
+}
+
+/* Sidebar */
+.navbar {
+  width: clamp(200px, 18vw, 240px);
+  flex: 0 0 clamp(200px, 18vw, 240px);
+
+  height: 100vh;
+  height: 100dvh;
+
+  position: sticky;
+  top: 0;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+
+  height: 100vh;
+  height: 100dvh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+
+  padding: clamp(18px, 2.8vw, 40px) clamp(14px, 3.2vw, 48px);
+
+  box-shadow: inset 18px 0 30px rgba(0, 0, 0, 0.35);
+}
+
+.page {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: clamp(26px, 3vw, 36px);
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  font-weight: bold;
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    width: 150px;
+    flex: 0 0 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-content {
+    padding: 18px 14px;
+    box-shadow: inset 12px 0 22px rgba(0, 0, 0, 0.28);
+  }
+}

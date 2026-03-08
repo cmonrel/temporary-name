@@ -1,0 +1,10 @@
+.combat-grid {
+  display: grid;
+  gap: clamp(12px, 1.8vw, 16px);
+}
+
+@media (max-width: 900px) {
+  .combat-grid {
+    grid-template-columns: 1fr;
+  }
+}

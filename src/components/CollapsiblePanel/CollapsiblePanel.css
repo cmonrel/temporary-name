@@ -1,0 +1,52 @@
+.cpanel {
+  padding: 0;
+}
+
+.cpanel__summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 16px 18px;
+}
+
+.cpanel__summary::-webkit-details-marker {
+  display: none;
+}
+
+.cpanel__titles {
+  display: grid;
+  gap: 4px;
+}
+
+.cpanel__content {
+  padding: 0 18px 18px;
+}
+
+.cpanel[open] .cpanel__summary {
+  border-bottom: 1px solid color-mix(in srgb, var(--border-soft) 70%, transparent);
+}
+
+.cpanel__chev {
+  transition: transform 0.2s var(--ease-main);
+  color: var(--text-muted);
+}
+
+.cpanel[open] .cpanel__chev {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cpanel__content {
+    animation: cpanelIn 160ms var(--ease-main);
+  }
+  @keyframes cpanelIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
