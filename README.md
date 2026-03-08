@@ -76,22 +76,40 @@ yarn build
 
 ## Contributing
 
-Contributions are welcome! To contribute, please follow these steps:
+Contributions are welcome! Please read the following guidelines before submitting any changes.
+
+### Workflow
+
+All contributions must go through a **Pull Request**. Direct pushes to `main` are not allowed.
 
 1. **Fork** the repository
-2. **Create** a new branch for your feature or fix:
+2. **Create** a new branch from `main` with a descriptive name:
    ```bash
    git checkout -b feature/your-feature-name
+   # or
+   git checkout -b fix/your-bug-fix
    ```
-3. **Commit** your changes with a descriptive message:
+3. **Make** your changes and commit them following this format:
    ```bash
-   git commit -m "feat: add your feature description"
+   git commit -m "type: short description of the change"
    ```
-4. **Push** to your branch:
+   Common types: `feat`, `fix`, `docs`, `style`, `refactor`
+
+4. **Push** your branch:
    ```bash
    git push origin feature/your-feature-name
    ```
-5. **Open a Pull Request** and describe your changes
+5. **Open a Pull Request** against `main` and fill in the description explaining what you changed and why
+
+### Review process
+
+- All pull requests require **at least one approval** from a code owner before merging
+- Code owners will be automatically assigned for review based on the files changed
+- Please make sure your code is clean and consistent with the existing style before requesting a review
+
+### Reporting issues
+
+Found a bug or have a suggestion? Open an [issue](https://github.com/cmonrel/temporary-name/issues) and describe it as clearly as possible.
 
 > ⚠️ Please make sure your code follows the existing code style and that all changes go through a Pull Request. Direct pushes to `main` are not allowed.
 
