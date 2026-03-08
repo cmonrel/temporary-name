@@ -1,73 +1,120 @@
-# React + TypeScript + Vite
+# Temporary Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A modern web application built with React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Table of Contents
 
-## React Compiler
+- [About](#about)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the App](#running-the-app)
+- [Contributing](#contributing)
+- [License](#license)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## About
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Temporary Name** is an interactive digital rulebook for tabletop RPG players, built with React.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The goal of the project is to offer an easy and accessible way to consult the rules of the game,
+with plans to expand functionality and evolve into a fully-featured, professional-looking 
+companion site — inspired by platforms like D&D Beyond.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/cmonrel/temporary-name.git
+cd temporary-name
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+# or
+yarn install
 ```
+
+### Running the App
+
+Start the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+The app will be available at `http://localhost:5173` (Vite) or `http://localhost:3000` (Create React App).
+
+To build for production:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+---
+
+## Contributing
+
+Contributions are welcome! Please read the following guidelines before submitting any changes.
+
+### Workflow
+
+All contributions must go through a **Pull Request**. Direct pushes to `main` are not allowed.
+
+1. **Fork** the repository
+2. **Create** a new branch from `main` with a descriptive name:
+   ```bash
+   git checkout -b feature/your-feature-name
+   # or
+   git checkout -b fix/your-bug-fix
+   ```
+3. **Make** your changes and commit them following this format:
+   ```bash
+   git commit -m "type: short description of the change"
+   ```
+   Common types: `feat`, `fix`, `docs`, `style`, `refactor`
+
+4. **Push** your branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Open a Pull Request** against `main` and fill in the description explaining what you changed and why
+
+### Review process
+
+- All pull requests require **at least one approval** from a code owner before merging
+- Code owners will be automatically assigned for review based on the files changed
+- Please make sure your code is clean and consistent with the existing style before requesting a review
+
+### Reporting issues
+
+Found a bug or have a suggestion? Open an [issue](https://github.com/cmonrel/temporary-name/issues) and describe it as clearly as possible.
+
+> ⚠️ Please make sure your code follows the existing code style and that all changes go through a Pull Request. Direct pushes to `main` are not allowed.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
