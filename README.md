@@ -102,5 +102,3 @@ Contributions are welcome! To contribute, please follow these steps:
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-<p align="center">Made with ❤️ using React</p>
