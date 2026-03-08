@@ -1,0 +1,9 @@
+.table--influence th:first-child,
+.table--influence td:first-child {
+    width: 15%;
+}
+
+.table--influence th:nth-child(2)
+.table--influence td:nth-child(2) {
+    text-align: left;
+}

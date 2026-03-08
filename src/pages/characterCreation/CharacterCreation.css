@@ -1,0 +1,18 @@
+.table--creation th:first-child {
+    width: 30%;
+}
+
+@media (max-width: 900px) {
+    .table--creation th:first-child {
+    width: 80%;
+}
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.basic-skills {
+    display: flex;
+    justify-content: space-around;
+}
