@@ -100,5 +100,3 @@ Contributions are welcome! To contribute, please follow these steps:
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
